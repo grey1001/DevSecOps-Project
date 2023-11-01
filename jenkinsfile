@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        registry = 'greyabiwon/netflix'
+        registry = 'greyabiwon/net-flix'
         registryCredential = 'docker-login'
         slack = 'slack'
     }
