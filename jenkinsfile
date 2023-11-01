@@ -50,7 +50,7 @@ pipeline {
         stage('Building image') {
             steps {
                 script {
-                    dockerImage = docker.build "--build-arg TMDB_V3_API_KEY=f8303107c980e96aa98a72b5562335f5", "${registry}:v${BUILD_NUMBER}"
+                    dockerImage = docker.build "${registry}:v${BUILD_NUMBER}"
                 }
             }
         }
