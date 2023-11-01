@@ -8,7 +8,7 @@ pipeline {
         SCANNER_HOME = tool 'sonar-scanner'
         registry = "greyabiwon/netflix"
         registryCredential = 'docker-login'
-        SLACK_TOKEN = 'slack'
+        slack = 'slack'
     }
     stages {
         stage('clean workspace') {
@@ -86,7 +86,7 @@ pipeline {
             slackSend(
                 color: '#FF0000',
                 message: "Pipeline failed: ${currentBuild.fullDisplayName}",
-                tokenCredentialId: 'SLACK_TOKEN',
+                tokenCredentialId: 'slack',
                 channel: '#devops-cicd'
             )
         }
@@ -94,7 +94,7 @@ pipeline {
             slackSend(
                 color: 'good',
                 message: "Pipeline succeeded: ${currentBuild.fullDisplayName}",
-                tokenCredentialId: 'SLACK_TOKEN',
+                tokenCredentialId: 'slack',
                 channel: '#devops-cicd'
             )
         }
