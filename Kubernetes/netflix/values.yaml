@@ -1,0 +1,8 @@
+# values.yaml
+image:
+  repository: greyabiwon/netflix
+  tag: v28
+
+# values.yaml
+externalDNS:
+  hostname: "netflix.greyabiwon.co" # Default hostname, you can change it
